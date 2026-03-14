@@ -47,7 +47,7 @@ jobs:
           sudo mv conftest /usr/local/bin
 
       - name: Policy Check
-        run: conftest test . --policy ../policy
+        run: conftest test ../terraform --policy ../policy
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
