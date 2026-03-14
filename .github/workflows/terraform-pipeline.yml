@@ -39,6 +39,12 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -out=tfplan
 
+      - name: Convert Terraform Plan to JSON 
+        run: terraform show -json tfplan > tfplan.json
+
+      - name: Verify Files
+        run: ls -la
+
       - name: Install Conftest
         run: |
           VERSION=0.45.0
